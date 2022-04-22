@@ -41,8 +41,7 @@ You must use Git for the development of the project and branches for each featur
 
 # Deliverables
 To evaluate the project you will need the following deliverables:
-
 Repository with the code that includes also the documentation bellow
-   -A presentation in Google Slides explaining:
-   -Explain what lessons you’ve learned during this project
-   -How have you decided to organize the three stages of the game that you have had to develop?
+-A presentation in Google Slides explaining:
+-Explain what lessons you’ve learned during this project
+-How have you decided to organize the three stages of the game that you have had to develop?
