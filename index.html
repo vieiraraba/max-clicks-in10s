@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Press+Start+2P#standard-styles">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -66,11 +67,24 @@
             </canvas>
         </section>
 
-        <section class="finish-screen" id="finish-screen">
-            <div class="noise"></div>
-            <div class="overlay"></div>
+        <section>
+            <div class="win-screen">
+                <div class="noise-lost"></div>
+                <div class="overlay-lost"></div>
+                <div class="finish-terminal">
+                    <h2>Congratulations!</h2>
+                    <p class="output">The virus was defeated.</p>
+                    <p class="output">Please try to <a href="#1">try again</a> or <a href="#2">return to the homepage</a>.</p>
+                    <p class="output">Good luck.</p>
+            </div>
+            </div>
+        </section>
+
+        <section class="lost-screen" id="lost-screen">
+            <div class="noise-lost"></div>
+            <div class="overlay-lost"></div>
             <div class="finish-terminal">
-                <h1>Error <span class="errorcode">404</span></h1>
+                <h2>Error <span class="errorcode">404</span></h2>
                 <p class="output">The virus wasn't defeated.</p>
                 <p class="output">Please try to <a href="#1">try again</a> or <a href="#2">return to the homepage</a>.</p>
                 <p class="output">Good luck.</p>
@@ -89,8 +103,8 @@
         </section>
 
         <section class="live-data" id="live-data">
-            <div class="user-name"></div>
-            <div class="live-score" id="live-score"></div>
+            <div class="user-name">User</div>
+            <div class="live-score" id="live-score">#Score</div>
         </section>
     </Footer>
 </body>
