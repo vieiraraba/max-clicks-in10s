@@ -85,22 +85,49 @@ body {
 /* Registration windows (User info) */
 
 .registration-screen{
-    display:flex;
+    display:none;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius:20px;
+    width: auto;
+    height: 50vw;
 }
 
+/* Game window (playable area) */
 
-
-/* ============================================= */
 .game-screen{
     display:none;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius:20px;
+    width: auto;
+    height: 50vw;
 }
+
+/* Win Window (if the player win) */
 
 .win-screen{
-    display:none;
+    display: none;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius:20px;
+    width: auto;
+    height: 50vw;
 }
 
-.lost-screen{
-    display:none;
+/* Lose Window (if the player lose) */
+
+.lose-screen{
+    display: none;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius:20px;
+    width: auto;
+    height: 50vw;
 }
 
 /* ================================================================= */
@@ -117,11 +144,12 @@ body {
 
 .live-data{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-direction: column;
     border: 1px solid #000;
     border-radius:20px;
-    margin: 10px;
-    padding: 10px;
+    margin: 20px;
+    padding: 20px;
 }
 
 .ranking{
