@@ -25,23 +25,24 @@ When a player enters his username and clicks on the start button, the player mus
 When this player finishes the game, the ranking will be dynamically updated to show your score instead of the previous message
 When the player finishes the game, the Scoring screen will be displayed with the results of the game.
 All game processes must be carried out without reloading the page
-You will not be able to use cookies, only localStorage for saving score data
-You must store:
-Current game
-User name
-Game duration
-Scoring of the current game
-Ranking
-User name
-Scoring
+  You will not be able to use cookies, only localStorage for saving score data
+    You must store:
+      Current game
+      User name
+      Game duration
+      Scoring of the current game
+      Ranking
+      User name
+    Scoring
 The ranking will show above the last record that has been entered
 After each game the total score is stored (if you refresh the browser is lost)
 You cannot use third-party libraries
 You must use Git for the development of the project and branches for each feature, try not to separate branches by person
-4. Deliverables
+
+# Deliverables
 To evaluate the project you will need the following deliverables:
 
 Repository with the code that includes also the documentation bellow
-A presentation in Google Slides explaining:
-Explain what lessons you’ve learned during this project
-How have you decided to organize the three stages of the game that you have had to develop?
+    A presentation in Google Slides explaining:
+    Explain what lessons you’ve learned during this project
+    How have you decided to organize the three stages of the game that you have had to develop?
