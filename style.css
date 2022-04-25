@@ -125,8 +125,9 @@ body {
 
 /* Game window (playable area) */
 
-.game-screen{
-    display:none;
+.game-area{
+    display:flex;
+    position: relative;
     justify-content:center;
     flex-direction: column;
     border: 1px solid #000;
@@ -135,14 +136,20 @@ body {
     height: 48vw;
 }
 
-.game-area{
-    display:flex;
-    justify-content:center;
-    flex-direction: column;
-    border: 1px solid #000;
-    border-radius:20px;
-    width: auto;
-    height: 48vw;
+.game-area h3{
+    position:absolute;
+    top:43%;
+    right:43%;
+    color: rgba(255,255,255,0.5);
+    font-size:6vw;
+}
+
+#virus-image{
+    height:15vw;
+}
+
+#virus-image:hover{
+    cursor:pointer;
 }
 
 /* Win Window (if the player win) */
@@ -155,7 +162,6 @@ body {
     border-radius:20px;
     background-color: rgb(133, 192, 189);
     width: auto;
-    
     padding:12rem;
     margin:5rem;
 }
@@ -163,7 +169,7 @@ body {
 /* Lose Window (if the player lose) */
 
 .lose-screen{
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     border-radius: 20px;
@@ -199,7 +205,6 @@ body {
     border-style: ridge;
     align-items: center;
     justify-content: center;
-}
 }
 
 .live-data{
