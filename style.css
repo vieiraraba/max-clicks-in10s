@@ -13,7 +13,8 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-between;
+    align-items:center;
     background: #e8f1f2;
     border: 1px solid #000;
     border-radius: 20px;
@@ -22,13 +23,33 @@ body {
     padding: 1.5em;
 }
 
+#btn-reset{
+    height: 40px;
+    width: 40px;
+    background-color: yellow;
+    margin: 0.02rem;
+    padding: 0.3rem;
+    border-radius: 50px;
+}
+
+#btn-home{
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    margin: 0.02rem;
+    padding: 0.3rem;
+    border-radius: 50px;
+}
+
 /* ================================================================= */
 /* Main */
 
 .main {
     display: flex;
     flex-direction: column;
-    border: 1px solid #000;
+    background-image: url(/media/941898.jpg);
+    background-position: center center;
+    background-size: cover;
     border-radius:20px;
     height: 50vw;
     margin: 5rem;
@@ -89,9 +110,12 @@ body {
     justify-content:center;
     flex-direction: column;
     border: 1px solid #000;
+    background-color: rgb(224, 87, 87);
     border-radius:20px;
     width: auto;
     height: 50vw;
+    padding:12rem;
+    margin:5rem;
 }
 
 /* Game window (playable area) */
@@ -103,7 +127,17 @@ body {
     border: 1px solid #000;
     border-radius:20px;
     width: auto;
-    height: 50vw;
+    height: 48vw;
+}
+
+.game-area{
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius:20px;
+    width: auto;
+    height: 48vw;
 }
 
 /* Win Window (if the player win) */
@@ -114,20 +148,26 @@ body {
     flex-direction: column;
     border: 1px solid #000;
     border-radius:20px;
+    background-color: rgb(133, 192, 189);
     width: auto;
     height: 50vw;
+    padding:12rem;
+    margin:5rem;
 }
 
 /* Lose Window (if the player lose) */
 
 .lose-screen{
-    display: none;
+    display: flex;
     justify-content:center;
     flex-direction: column;
     border: 1px solid #000;
     border-radius:20px;
+    background-color: rgb(196, 109, 109);
     width: auto;
     height: 50vw;
+    padding:12rem;
+    margin:5rem;
 }
 
 /* ================================================================= */
@@ -135,9 +175,10 @@ body {
 
 .footer{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border: 1px solid #000;
     border-radius:20px;
+    background-color: #e8f1f2;;
     margin: 5rem;
     padding: 1.5rem;
 }

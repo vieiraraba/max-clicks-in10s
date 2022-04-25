@@ -17,9 +17,10 @@
 
         <header class="header">
             <div class="logo"></div>
-            <h1>LOGO</h1>
+            <img src="/media/MicrosoftTeams-image (2).png" alt="" height="100px" width="300px">
+            <h1>logo</h1>
             <button id="btn-reset"></button>
-            <button id="btn-home"></button>
+            <button id="btn-home"></button><br>
         </header>
 
         <main class="main">
@@ -73,17 +74,16 @@
                 </canvas>
             </section>
 
-            <section>
-                <div class="win-screen">
-                    <div class="noise-lost"></div>
-                    <div class="overlay"></div>
-                    <div class="win-terminal">
-                        <h2>Congratulations!</h2>
-                        <p class="output">The virus was defeated.</p>
-                        <p class="output">Please try to <a href="#1">try again</a> or <a href="#2">return to the homepage</a>.</p>
-                        <p class="output">Good luck.</p>
+            <section class="win-screen" id="win-screen">
+                <div class="noise-win"></div>
+                <div class="overlay"></div>
+                <div class="win-terminal">
+                    <h2>Congratulations <span class="errorcode">!!</span></h2>
+                    <p class="output">The virus was defeated.</p>
+                    <p class="output">Please try to <a href="#1">try again</a> or <a href="#2">return to the homepage</a>.</p>
+                    <p class="output">Good luck.</p>
                 </div>
-                </div>
+            </section>
             </section>
 
             <section class="lose-screen" id="lose-screen">
@@ -116,21 +116,21 @@
 
             <section class="ranking" id="ranking">
                 <h2>Score Board</h2>
-                <br>
+                <br><br>
                 <div class="first-place" id="first-place">
-                    <span>🥇</span><span>Pedro</span><br>
+                    <span>🥇</span><span>Pedro</span><br><br>
                 </div>
 
                 <div class="seocnd-place" id="seocnd-place">
-                    <span>🥈</span><span>Juan</span><br>
+                    <span>🥈</span><span>Juan</span><br><br>
                 </div>
 
                 <div class="third-place" id="third-place">
-                    <span>🥉</span><span>Raul</span><br>
+                    <span>🥉</span><span>Raul</span><br><br>
                 </div>
 
                 <div class="forth-place" id="forth-place">
-                    <span>💩</span><span>Benito</span><br>
+                    <span>💩</span><span>Benito</span><br><br>
                 </div>
             </section>
 
