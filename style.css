@@ -5,12 +5,8 @@
 
 body {
     font-family: "Press Start 2P", cursive;
-    background: linear-gradient(358deg, #246655, #012c3c);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    background-image: url(https://i.gifer.com/xK.gif);
+    background-size: contain;
 }
 
 /* ================================================================= */
@@ -29,12 +25,6 @@ body {
     margin: auto;
     width: 30%;
 }
-
-
-
-
-
-
 
 #btn-reset{
     height: 40px;
@@ -60,11 +50,15 @@ body {
 .main {
     display: flex;
     flex-direction: column;
-    background-image: url(/media/941898.jpg);
-    background-position: center center;
-    background-size: cover;
-    border-radius:20px;
-    height: 50vw;
+    background-image: url(/media/1j6F_morado.gif);
+    background-position: center;
+    background-size: auto;
+    border-radius: 20px;
+    width: 90%;
+    margin: auto;
+    background-repeat: round;
+    border: solid 11px #313062;
+    border-style: double;
 }
 
 /* Terminal windows (History) */
@@ -75,11 +69,10 @@ body {
     flex-direction: column;
     border: 1px solid #000;
     border-radius:20px;
-    background-image: url(/media/941898.jpg);
     background-position: center center;
     background-size: cover;
     width: auto;
-    height: 50vw;
+    
 }
 
 .terminal-screen{
@@ -162,7 +155,7 @@ body {
     border-radius:20px;
     background-color: rgb(133, 192, 189);
     width: auto;
-    height: 50vw;
+    
     padding:12rem;
     margin:5rem;
 }
@@ -171,15 +164,24 @@ body {
 
 .lose-screen{
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
-    border: 1px solid #000;
-    border-radius:20px;
-    background-color: rgb(196, 109, 109);
+    border-radius: 20px;
     width: auto;
-    height: 50vw;
-    padding:12rem;
-    margin:5rem;
+    padding: 4rem;
+    margin: 40px;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: rgb(0 0 0);
+    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+    background-size: contain;
+    font-family: Inconsolata, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: rgb(255 255 255 / 80%);
+    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+    border-width: 2px;
+    border-style: inherit;
+    border-color: #47334f;
 }
 
 /* ================================================================= */
@@ -187,12 +189,17 @@ body {
 
 .footer{
     display: flex;
-    justify-content: space-between;
-    border: 1px solid #000;
-    border-radius:20px;
-    background-color: #e8f1f2;;
-    margin: 5rem;
-    padding: 1.5rem;
+    border: 7px #313062;
+    border-radius: 20px;
+    background-color: #313062;
+    margin: 10px auto;
+    padding: 0.5rem;
+    width: 90%;
+    color: aliceblue;
+    border-style: ridge;
+    align-items: center;
+    justify-content: center;
+}
 }
 
 .live-data{
