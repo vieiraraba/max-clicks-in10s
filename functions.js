@@ -31,6 +31,16 @@ let finishTimer = false;
 let timeInterval;
 let userData;
 
+// EventListeners //
+
+
+startBtn.addEventListener("click", registration);
+loginBtn.addEventListener("click", startGame);
+tryAgain.addEventListener("click", resetGame);
+homePage.addEventListener("click", goHome);
+virusImg.addEventListener("click", counterClick);
+
+
 // TypeText
 let myText = "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
     i = 0;
@@ -46,10 +56,29 @@ window.onload = function() {
   }, 50);
 };
 
+//--- OBJECT --- //
+class Player {
+  constructor(userName, score) {
+    this.userName = userName;
+    this.score = score;
+  }
+}
 
-startTimer === true; //TODO --> Remove this line after player "Enter" in the game area
+let playersObj = [];
 
-virusImg.addEventListener("click", counterClick);
+//--- FUNCTIONS ---//
+function storagePlayer() {
+  let user = nickName.value;
+  console.log(user);
+  let score = scoreEl.textContent;
+  let players = new Player(user, score);
+  playersObj.push(players);
+  localStorage.setItem("players", JSON.stringify(playersObj));
+}
+
+function setTimeout (){
+  finishTimer = false;
+}
 
 function counterClick() {
   if (finishTimer === true) {
@@ -66,6 +95,7 @@ function counterClick() {
 
 function counterTime() {
   if (timeleft === -1) {
+    console.log(finishTimer);
     loseGame();
     startTimer = false;
     finishTimer = true;
@@ -95,11 +125,6 @@ function restartGame() {
   clearTimeout(timeInterval);
 }
 
-startBtn.addEventListener("click", registration);
-loginBtn.addEventListener("click", startGame);
-tryAgain.addEventListener("click", resetGame);
-homePage.addEventListener("click", goHome);
-
 function registration () {
     terminalScreen.style.display = "none";
     registrationScreen.style.display = "block";
@@ -124,8 +149,13 @@ function goHome () {
   registrationScreen.style.display = "none";
   gameArea.style.display = "none";
   loseScreenEl.style.display = "none";
+  setTimeout ();
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4885f26a5d0dc34155d80197f69d967c641dffd3
 let object = document.getElementById("virus-image")
 object.onclick=function(){
   let x = Math.floor(Math.random()*300);
