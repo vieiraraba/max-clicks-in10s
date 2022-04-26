@@ -1,4 +1,6 @@
 "use strict";
+
+
 //DOM Elements
 
 const terminalScreen = document.getElementById("terminal-screen");
@@ -30,6 +32,22 @@ let startTimer = false;
 let finishTimer = false;
 let timeInterval;
 let userData;
+
+// TypeText
+let myText = 'This is a message from Assembler School. The academy main server has been hacked. We need your help student.',
+    i = 0;
+
+window.onload = function() {
+  console.log (window.onload);
+  let typeWriter = setInterval(function() {
+    document.getElementById('mytext').textContent += myText[i];
+    i++;
+    if (i > myText.length - 1) {
+      clearInterval(typeWriter);
+    }
+  }, 50);
+};
+
 
 startTimer === true; //TODO --> Remove this line after player "Enter" in the game area
 
@@ -96,6 +114,7 @@ function startGame () {
     registrationScreen.style.display = "none";
     gameArea.style.display = "flex";
     timeInterval = setInterval(counterTime, 1000);
+<<<<<<< HEAD
     userName.textContent = userData;
     console.log(userData);
 }
@@ -109,3 +128,8 @@ function goHome () {
   gameArea.style.display = "none";
   loseScreenEl.style.display = "none";
 }
+=======
+}
+
+
+>>>>>>> origin/typeWrite
