@@ -8,12 +8,13 @@ const registrationScreen = document.getElementById("registration-screen");
 const gameArea = document.getElementById("game-area");
 const winScreen = document.getElementById("win-screen");
 const loseScreen = document.getElementById("lost-screen");
-
-let nickName = document.getElementById("login");
-let timer = document.getElementById("timer-number");
 const startBtn = document.getElementById("start-btn");
 const loginBtn = document.getElementById("login-btn");
-
+const tryAgain = document.getElementById("try-again");
+const homePage = document.getElementById("home-page");
+let nickName = document.getElementById("login");
+let timer = document.getElementById("timer-number");
+let userName = document.getElementById("user-name");
 
 let virusImg = document.getElementById("virus-image");
 let scoreEl = document.querySelector(".score");
@@ -30,9 +31,10 @@ let totalClicked = 0;
 let startTimer = false;
 let finishTimer = false;
 let timeInterval;
+let userData;
 
 // TypeText
-let myText = 'This is a message from Assembler School. The academy main server has been hacked. We need your help student.',
+let myText = "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
     i = 0;
 
 window.onload = function() {
@@ -97,6 +99,8 @@ function restartGame() {
 
 startBtn.addEventListener("click", registration);
 loginBtn.addEventListener("click", startGame);
+tryAgain.addEventListener("click", resetGame);
+homePage.addEventListener("click", goHome);
 
 function registration () {
     terminalScreen.style.display = "none";
@@ -105,10 +109,21 @@ function registration () {
 }
 
 function startGame () {
+  userData = nickName.value;
     terminalScreen.style.display = "none";
     registrationScreen.style.display = "none";
     gameArea.style.display = "flex";
     timeInterval = setInterval(counterTime, 1000);
+    userName.textContent = userData;
+    console.log(userData);
 }
 
+function resetGame(){
+}
 
+function goHome () {
+  terminalScreen.style.display = "flex";
+  registrationScreen.style.display = "none";
+  gameArea.style.display = "none";
+  loseScreenEl.style.display = "none";
+}
