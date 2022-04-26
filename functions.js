@@ -1,6 +1,18 @@
 "use strict";
-
 //DOM Elements
+
+const terminalScreen = document.getElementById("terminal-screen");
+const registrationScreen = document.getElementById("registration-screen");
+const gameArea = document.getElementById("game-area");
+const winScreen = document.getElementById("win-screen");
+const loseScreen = document.getElementById("lost-screen");
+
+let nickName = document.getElementById("login");
+let timer = document.getElementById("timer-number");
+const startBtn = document.getElementById("start-btn");
+const loginBtn = document.getElementById("login-btn");
+
+
 let virusImg = document.getElementById("virus-image");
 let scoreEl = document.querySelector(".score");
 let timerEl = document.getElementById("timer");
@@ -9,6 +21,8 @@ let winScreenEl = document.querySelector(".win-screen ");
 let loseScreenEl = document.querySelector(".lose-screen ");
 
 //Global Variables
+let terminalShow = false;
+let gameShow = false;
 let timeleft = 10;
 let totalClicked = 0;
 let startTimer = false;
@@ -46,9 +60,6 @@ function counterTime() {
 
 //startGame(); //TODO --> Add StartGame() after Enter in the game area
 
-function startGame() {
-  timeInterval = setInterval(counterTime, 1000);
-}
 
 function winGame() {
   winScreenEl.style.display = "flex";
@@ -64,4 +75,20 @@ function loseGame() {
 
 function restartGame() {
   clearTimeout(timeInterval);
+}
+
+startBtn.addEventListener("click", registration);
+loginBtn.addEventListener("click", startGame);
+
+function registration () {
+    terminalScreen.style.display = "none";
+    registrationScreen.style.display = "block";
+    terminalShow = true;
+}
+
+function startGame () {
+    terminalScreen.style.display = "none";
+    registrationScreen.style.display = "none";
+    gameArea.style.display = "flex";
+    timeInterval = setInterval(counterTime, 1000);
 }

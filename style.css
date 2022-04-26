@@ -64,7 +64,7 @@ body {
 /* Terminal windows (History) */
 
 .windows-desktop {
-  display: none;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   border: 1px solid #000;
@@ -110,7 +110,7 @@ body {
 /* Registration windows (User info) */
 
 .registration-screen{
-    display: block;
+    display: none;
     justify-content: center;
     flex-direction: column;
     border-radius: 20px;
@@ -134,7 +134,7 @@ body {
 /* Game window (playable area) */
 
 .game-area {
-  display: flex;
+  display: none;
   position: relative;
   justify-content: center;
   flex-direction: column;
@@ -163,7 +163,7 @@ body {
 /* Win Window (if the player win) */
 
 .win-screen{
-    display: block;
+    display: none;
     justify-content: center;
     flex-direction: column;
     border-radius: 20px;
