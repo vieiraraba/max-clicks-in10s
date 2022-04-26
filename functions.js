@@ -42,7 +42,7 @@ virusImg.addEventListener("click", counterClick);
 
 
 // TypeText
-let myText = 'This is a message from Assembler School. The academy main server has been hacked. We need your help student.',
+let myText = "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
     i = 0;
 
 window.onload = function() {
