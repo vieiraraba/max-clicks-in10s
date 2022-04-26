@@ -111,16 +111,25 @@ body {
 /* Registration windows (User info) */
 
 .registration-screen{
-    display:none;
-    justify-content:center;
+    display: block;
+    justify-content: center;
     flex-direction: column;
-    border: 1px solid #000;
-    background-color: rgb(224, 87, 87);
-    border-radius:20px;
+    border-radius: 20px;
     width: auto;
-    height: 50vw;
-    padding:12rem;
-    margin:5rem;
+    padding: 4rem;
+    margin: 40px;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: rgb(0 0 0);
+    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+    background-size: contain;
+    font-family: Inconsolata, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: rgb(255 255 255 / 80%);
+    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+    border-width: 2px;
+    border-style: inherit;
+    border-color: #47334f;
 }
 
 /* Game window (playable area) */
@@ -155,15 +164,25 @@ body {
 /* Win Window (if the player win) */
 
 .win-screen{
-    display: none;
-    justify-content:center;
+    display: block;
+    justify-content: center;
     flex-direction: column;
-    border: 1px solid #000;
-    border-radius:20px;
-    background-color: rgb(133, 192, 189);
+    border-radius: 20px;
     width: auto;
-    padding:12rem;
-    margin:5rem;
+    padding: 4rem;
+    margin: 40px;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: rgb(0 0 0);
+    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+    background-size: contain;
+    font-family: Inconsolata, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: rgb(255 255 255 / 80%);
+    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+    border-width: 2px;
+    border-style: inherit;
+    border-color: #47334f;
 }
 
 /* Lose Window (if the player lose) */
@@ -209,20 +228,40 @@ body {
 
 .live-data{
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
-    border: 1px solid #000;
-    border-radius:20px;
+    justify-content: space-evenly;
+    border: 3px #688ace;
+    border-radius: 20px;
     margin: 20px;
     padding: 20px;
+    width: -webkit-fill-available;
+    border-style: dashed;
 }
 
 .ranking{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border: 1px solid #000;
-    border-radius:20px;
+    border: 3px #688ace;
+    border-radius: 20px;
     margin: 20px;
     padding: 20px;
+    width: -webkit-fill-available;
+    border-style: dashed;
+}
+
+.scoreboard {
+    box-shadow: 0px 10px 14px -7px #000000;
+    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+    background-color: #599bb3;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 32px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #0e0e0e;
 }
