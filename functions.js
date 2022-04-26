@@ -151,11 +151,7 @@ function goHome () {
   loseScreenEl.style.display = "none";
   setTimeout ();
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 4885f26a5d0dc34155d80197f69d967c641dffd3
 let object = document.getElementById("virus-image")
 object.onclick=function(){
   let x = Math.floor(Math.random()*300);
@@ -163,5 +159,3 @@ object.onclick=function(){
   object.style.top = x + 'px';
   object.style.left = y + 'px';
 };
-=======
->>>>>>> origin/typeWrite
