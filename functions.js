@@ -6,12 +6,12 @@ const registrationScreen = document.getElementById("registration-screen");
 const gameArea = document.getElementById("game-area");
 const winScreen = document.getElementById("win-screen");
 const loseScreen = document.getElementById("lost-screen");
-
-let nickName = document.getElementById("login");
-let timer = document.getElementById("timer-number");
 const startBtn = document.getElementById("start-btn");
 const loginBtn = document.getElementById("login-btn");
 
+let nickName = document.getElementById("login");
+let timer = document.getElementById("timer-number");
+let userName = document.getElementById("user-name");
 
 let virusImg = document.getElementById("virus-image");
 let scoreEl = document.querySelector(".score");
@@ -91,4 +91,6 @@ function startGame () {
     registrationScreen.style.display = "none";
     gameArea.style.display = "flex";
     timeInterval = setInterval(counterTime, 1000);
+    userName.textContent= `${nickName}`;
+    console.log(nickName);
 }

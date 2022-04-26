@@ -57,14 +57,13 @@
                                         Nickname:
                                     </div>
                                     <div class="col col__center">
-                                        <input type="text" id="login" maxlength="32">
+                                        <input type="text" id="login" minlength="3" maxlength="10">
                                     </div>
                                     </div>
                                     <!-- <b class="flash">ACCESS DENIED</b> -->
                                     <div class="row">
                                         <button type="submit" id="login-btn" name="submit">[login]</button>
                                     </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -108,8 +107,7 @@
             <section class="live-data" id="live-data"><br>
                 <div class="username">
                     <h4>User Name</h4><br>
-                    <div class="nickname">
-                        <span>Benito</span>
+                    <div class="nickname" id="user-name">
                     </div>
                 </div>
                 <br><br>
