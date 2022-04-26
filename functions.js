@@ -1,4 +1,19 @@
 "use strict";
+
+// TypeText
+var myText = 'This is a message from Assembler School. Wee need your help student.',
+    i = 0;
+
+window.onload = function() {
+  'use strict';
+  var typeWriter = setInterval(function() {
+    document.getElementById('mytext').textContent += myText[i];
+    i++;
+    if (i > myText.length - 1) {
+      clearInterval(typeWriter);
+    }
+  }, 150);
+};
 //DOM Elements
 
 const terminalScreen = document.getElementById("terminal-screen");
@@ -92,3 +107,5 @@ function startGame () {
     gameArea.style.display = "flex";
     timeInterval = setInterval(counterTime, 1000);
 }
+
+
