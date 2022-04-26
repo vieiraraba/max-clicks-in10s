@@ -28,6 +28,7 @@ let totalClicked = 0;
 let startTimer = false;
 let finishTimer = false;
 let timeInterval;
+let userData;
 
 startTimer === true; //TODO --> Remove this line after player "Enter" in the game area
 
@@ -87,10 +88,11 @@ function registration () {
 }
 
 function startGame () {
+  userData = nickName.value;
     terminalScreen.style.display = "none";
     registrationScreen.style.display = "none";
     gameArea.style.display = "flex";
     timeInterval = setInterval(counterTime, 1000);
-    userName.textContent= `${nickName}`;
-    console.log(nickName);
+    userName.textContent = userData;
+    console.log(userData);
 }
