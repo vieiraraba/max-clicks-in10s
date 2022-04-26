@@ -128,8 +128,18 @@ function goHome () {
   gameArea.style.display = "none";
   loseScreenEl.style.display = "none";
 }
+<<<<<<< HEAD
 =======
 }
 
 
 >>>>>>> origin/typeWrite
+=======
+let object = document.getElementById("virus-image")
+object.onclick=function(){
+  let x = Math.floor(Math.random()*300);
+  let y = Math.floor(Math.random()*300);
+  object.style.top = x + 'px';
+  object.style.left = y + 'px';
+};
+>>>>>>> 5ab492a695680d8f38bfcb894f25c443025a0aac
