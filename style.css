@@ -71,7 +71,7 @@ body {
   border-radius: 20px;
   background-position: center center;
   background-size: cover;
-  width: auto;
+  
 }
 
 .terminal-screen {
@@ -119,6 +119,8 @@ body {
   border: 3px;
   border-style: solid;
   border-color: #52aafe;
+  width: 850px;
+  height: 120px;
 }
 
 .start-btn{
