@@ -32,7 +32,7 @@ let timeInterval;
 let userData;
 
 // TypeText
-let myText = 'This is a message from Assembler School. The academy main server has been hacked. We need your help student.',
+let myText = "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
     i = 0;
 
 window.onload = function() {
@@ -125,6 +125,7 @@ function goHome () {
   gameArea.style.display = "none";
   loseScreenEl.style.display = "none";
 }
+<<<<<<< HEAD
 let object = document.getElementById("virus-image")
 object.onclick=function(){
   let x = Math.floor(Math.random()*300);
@@ -132,3 +133,5 @@ object.onclick=function(){
   object.style.top = x + 'px';
   object.style.left = y + 'px';
 };
+=======
+>>>>>>> origin/typeWrite
