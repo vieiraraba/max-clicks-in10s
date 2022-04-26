@@ -1,6 +1,4 @@
 "use strict";
-
-
 //DOM Elements
 
 const terminalScreen = document.getElementById("terminal-screen");
@@ -114,7 +112,6 @@ function startGame () {
     registrationScreen.style.display = "none";
     gameArea.style.display = "flex";
     timeInterval = setInterval(counterTime, 1000);
-<<<<<<< HEAD
     userName.textContent = userData;
     console.log(userData);
 }
@@ -128,13 +125,6 @@ function goHome () {
   gameArea.style.display = "none";
   loseScreenEl.style.display = "none";
 }
-<<<<<<< HEAD
-=======
-}
-
-
->>>>>>> origin/typeWrite
-=======
 let object = document.getElementById("virus-image")
 object.onclick=function(){
   let x = Math.floor(Math.random()*300);
@@ -142,4 +132,3 @@ object.onclick=function(){
   object.style.top = x + 'px';
   object.style.left = y + 'px';
 };
->>>>>>> 5ab492a695680d8f38bfcb894f25c443025a0aac
