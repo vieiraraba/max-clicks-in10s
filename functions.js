@@ -33,11 +33,32 @@ startTimer === true; //TODO --> Remove this line after player "Enter" in the gam
 
 virusImg.addEventListener("click", counterClick);
 
+//--- OBJECT --- //
+class Player {
+  constructor(userName, score) {
+    this.userName = userName;
+    this.score = score;
+  }
+}
+
+let playersObj = [];
+
+//--- FUNCTIONS ---//
+function storagePlayer() {
+  let user = nickName.value;
+  console.log(user);
+  let score = scoreEl.textContent;
+  let players = new Player(user, score);
+  playersObj.push(players);
+  localStorage.setItem("players", JSON.stringify(playersObj));
+}
+
 function counterClick() {
   if (finishTimer === true) {
     return counterClick;
   } else if (totalClicked === 20) {
     winGame();
+    storagePlayer();
   } else {
     startTimer === true;
     totalClicked += 1;
@@ -60,7 +81,6 @@ function counterTime() {
 
 //startGame(); //TODO --> Add StartGame() after Enter in the game area
 
-
 function winGame() {
   winScreenEl.style.display = "flex";
   gameAreaEl.style.display = "none";
@@ -80,17 +100,17 @@ function restartGame() {
 startBtn.addEventListener("click", registration);
 loginBtn.addEventListener("click", startGame);
 
-function registration () {
-    terminalScreen.style.display = "none";
-    registrationScreen.style.display = "block";
-    terminalShow = true;
+function registration() {
+  terminalScreen.style.display = "none";
+  registrationScreen.style.display = "block";
+  terminalShow = true;
 }
 
-function startGame () {
-    terminalScreen.style.display = "none";
-    registrationScreen.style.display = "none";
-    gameArea.style.display = "flex";
-    timeInterval = setInterval(counterTime, 1000);
-    userName.textContent= `${nickName}`;
-    console.log(nickName);
+function startGame() {
+  terminalScreen.style.display = "none";
+  registrationScreen.style.display = "none";
+  gameArea.style.display = "flex";
+  timeInterval = setInterval(counterTime, 1000);
+  userName.textContent = `${nickName}`;
+  console.log(nickName);
 }
