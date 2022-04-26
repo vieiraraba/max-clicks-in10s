@@ -28,6 +28,7 @@ let totalClicked = 0;
 let startTimer = false;
 let finishTimer = false;
 let timeInterval;
+let userData;
 
 startTimer === true; //TODO --> Remove this line after player "Enter" in the game area
 
@@ -58,7 +59,6 @@ function counterClick() {
     return counterClick;
   } else if (totalClicked === 20) {
     winGame();
-    storagePlayer();
   } else {
     startTimer === true;
     totalClicked += 1;
