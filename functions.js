@@ -8,7 +8,8 @@ const winScreen = document.getElementById("win-screen");
 const loseScreen = document.getElementById("lost-screen");
 const startBtn = document.getElementById("start-btn");
 const loginBtn = document.getElementById("login-btn");
-
+const tryAgain = document.getElementById("try-again");
+const homePage = document.getElementById("home-page");
 let nickName = document.getElementById("login");
 let timer = document.getElementById("timer-number");
 let userName = document.getElementById("user-name");
@@ -80,6 +81,8 @@ function restartGame() {
 
 startBtn.addEventListener("click", registration);
 loginBtn.addEventListener("click", startGame);
+tryAgain.addEventListener("click", resetGame);
+homePage.addEventListener("click", goHome);
 
 function registration () {
     terminalScreen.style.display = "none";
@@ -95,4 +98,14 @@ function startGame () {
     timeInterval = setInterval(counterTime, 1000);
     userName.textContent = userData;
     console.log(userData);
+}
+
+function resetGame(){
+}
+
+function goHome () {
+  terminalScreen.style.display = "flex";
+  registrationScreen.style.display = "none";
+  gameArea.style.display = "none";
+  loseScreenEl.style.display = "none";
 }
