@@ -1,19 +1,6 @@
 "use strict";
 
-// TypeText
-var myText = 'This is a message from Assembler School. Wee need your help student.',
-    i = 0;
 
-window.onload = function() {
-  'use strict';
-  var typeWriter = setInterval(function() {
-    document.getElementById('mytext').textContent += myText[i];
-    i++;
-    if (i > myText.length - 1) {
-      clearInterval(typeWriter);
-    }
-  }, 150);
-};
 //DOM Elements
 
 const terminalScreen = document.getElementById("terminal-screen");
@@ -43,6 +30,22 @@ let totalClicked = 0;
 let startTimer = false;
 let finishTimer = false;
 let timeInterval;
+
+// TypeText
+let myText = 'This is a message from Assembler School. The academy main server has been hacked. We need your help student.',
+    i = 0;
+
+window.onload = function() {
+  console.log (window.onload);
+  let typeWriter = setInterval(function() {
+    document.getElementById('mytext').textContent += myText[i];
+    i++;
+    if (i > myText.length - 1) {
+      clearInterval(typeWriter);
+    }
+  }, 50);
+};
+
 
 startTimer === true; //TODO --> Remove this line after player "Enter" in the game area
 
