@@ -155,7 +155,7 @@ function goHome () {
 let object = document.getElementById("virus-image")
 object.onclick=function(){
   let x = Math.floor(Math.random()*300);
-  let y = Math.floor(Math.random()*300);
+  let y = Math.floor(Math.random()*700);
   object.style.top = x + 'px';
   object.style.left = y + 'px';
 };
