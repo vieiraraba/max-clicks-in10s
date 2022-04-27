@@ -125,8 +125,8 @@ body {
 
 .start-btn{
   box-shadow: inset 0px 1px 0px 0px #ff994e;
-  background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
-  background-color: #d0451b;
+  /* background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%); */
+  background-color: #1bd027;
   border-radius: 6px;
   border: 1px solid #942911;
   display: inline-block;
