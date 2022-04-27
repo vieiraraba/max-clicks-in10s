@@ -164,6 +164,50 @@ body {
     border-width: 2px;
     border-style: inherit;
     border-color: #47334f;
+    text-align: center;
+}
+
+#login-btn {
+  box-shadow: inset 0px 1px 0px 0px #ff994e;
+  background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
+  background-color: #d0451b;
+  border-radius: 6px;
+  border: 1px solid #942911;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 19px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+  font-variant: all-petite-caps;
+  padding: 10px 0px 13px 0px;
+  width: 30%;
+  margin: 5px auto;
+  font-family: "Press Start 2P", cursive;
+}
+.holder {
+}
+.row {
+  display: grid;
+}
+.col col__left label {
+  text-align: center;
+}
+#login  {
+  flex-grow: 1;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  background: black;
+  border-color: #fe9349;
+  border-width: 4px;
+  border-style: groove;
+  border-radius: 7px;
+  padding-left: 10px;
+  margin: 10px;
+  font-family: "Press Start 2P";
+  text-align: center;
 }
 
 /* Game window (playable area) */
