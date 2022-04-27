@@ -43,7 +43,7 @@ virusImg.addEventListener("click", counterClick);
 
 // TypeText
 let myText =
-  "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
+    "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
   i = 0;
 
 window.onload = function () {
@@ -261,41 +261,32 @@ function goHome() {
   scoreEl.textContent = "0";
 }
 
-let highScoreList = document.getElementById('highScoreList');
+/////////////////////////////////
+//*** RESET GAME SECTION ***//
+/////////////////////////////////
 
-
-
-// function gethighScore() {
-//   let players = localStorage.getItem('players');
-//   let objectPlayers = JSON.parse(players);
-//   highScoreList.innerHTML = objectPlayers
-//   .map((score) => {
-//     return(`${score.userName} - ${score.score}`);
-//   })
-//   .join(" ");
-// }
-
-// gethighScore();
-
-
+let highScoreList = document.getElementById("highScoreList");
 
 function gethighScore() {
-  let players = localStorage.getItem('players');
+  let players = localStorage.getItem("players");
   let objectPlayers = JSON.parse(players);
-// map object
+  console.log(objectPlayers);
+
   let scoremap = objectPlayers.map((score) => {
-    return(`${score.userName} - ${score.score}`)
-  }); 
+    return `${score.userName} - ${score.score}`;
+  });
   console.log(scoremap);
 
-  highScoreList.innerHTML = scoremap.join(" ");
-  
   //number sort
-  let scoreSort = scoremap.sort((a,b) => b.score - a.score );
-  console.log(scoreSort);
-  highScoreList.innerHTML = scoreSort;
-};
+  let scoreSort = objectPlayers.sort((a, b) => b.score - a.score);
+  let finalSortScore = JSON.stringify(scoreSort);
+  localStorage.setItem("players", finalSortScore);
 
+  highScoreList.innerHTML = scoreSort
+    .map((score) => {
+      return `<div class="highScore">${score.userName} - ${score.score}</div>`;
+    })
+    .join("");
+}
 
 gethighScore();
-
