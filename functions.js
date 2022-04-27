@@ -80,26 +80,26 @@ function storagePlayer() {
   localStorage.setItem("players", JSON.stringify(playersObj));
 }
 
-// function updateScore() {
-//   let getLocalStorageScore = JSON.parse(
-//     localStorage.getItem("players", playersObj)
-//   );
-//   getLocalStorageScore[0].score = scoreEl.textContent;
-//   let updateScore = JSON.stringify(getLocalStorageScore);
-//   localStorage.setItem("players", updateScore);
-// }
-
-function updateCurrentScore() {
+function updateScore() {
   let getLocalStorageScore = JSON.parse(
     localStorage.getItem("players", playersObj)
   );
-  let currentPlayer = getLocalStorageScore.splice(-1);
-  currentPlayer[0].score = scoreEl.textContent;
-
-  let currentPlayerScore = getLocalStorageScore.push(currentPlayer);
-  let updatePlayerScore = JSON.stringify(currentPlayerScore);
-  localStorage.setItem("players", updatePlayerScore);
+  getLocalStorageScore[0].score = scoreEl.textContent;
+  let updateScore = JSON.stringify(getLocalStorageScore);
+  localStorage.setItem("players", updateScore);
 }
+
+// function updateCurrentScore() {
+//   let getLocalStorageScore = JSON.parse(
+//     localStorage.getItem("players", playersObj)
+//   );
+//   let currentPlayer = getLocalStorageScore.splice(-1);
+//   currentPlayer[0].score = scoreEl.textContent;
+
+//   let currentPlayerScore = getLocalStorageScore.push(currentPlayer);
+//   let updatePlayerScore = JSON.stringify(currentPlayerScore);
+//   localStorage.setItem("players", updatePlayerScore);
+// }
 
 function addPlayerToStorage() {
   let getLocalStoragePlayer = JSON.parse(
