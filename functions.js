@@ -31,6 +31,7 @@ let finishTimer = false;
 let timeInterval;
 let userData;
 let tryAgainSelected;
+let homePageSelected;
 
 // EventListeners //
 
@@ -80,12 +81,21 @@ function storagePlayer() {
 }
 
 function updateScore() {
-  let getLocalStorageData = JSON.parse(
+  let getLocalStorageScore = JSON.parse(
     localStorage.getItem("players", playersObj)
   );
-  getLocalStorageData[0].score = scoreEl.textContent;
-  let updateScore = JSON.stringify(getLocalStorageData);
+  getLocalStorageScore[0].score = scoreEl.textContent;
+  let updateScore = JSON.stringify(getLocalStorageScore);
   localStorage.setItem("players", updateScore);
+}
+
+function updateName() {
+  let getLocalStorageName = JSON.parse(
+    localStorage.getItem("players", playersObj)
+  );
+  let getCurrentPlayer = getLocalStorageName[0].userName;
+  let updateName = JSON.stringify(getCurrentPlayer);
+  localStorage.setItem("players", updateName);
 }
 
 /////////////////////////////////
@@ -144,9 +154,10 @@ function counterTime() {
     startTimer = false;
     finishTimer = true;
     console.log("test 1");
-    if (tryAgainSelected) {
+    if (tryAgainSelected || homePageSelected) {
       // resetGame();
       updateScore(); //TODO --> Insert only new score insted of add new object
+      updateName();
       stopTimer();
       console.log("test 2");
       console.log(finishTimer);
@@ -202,6 +213,7 @@ function resetGame() {
 }
 
 function goHome() {
+  homePageSelected = true;
   resetGlobalValues();
   stopTimer();
   //Hidden screen and show game area
