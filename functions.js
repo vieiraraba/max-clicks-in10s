@@ -265,7 +265,7 @@ function goHome() {
 //*** RESET GAME SECTION ***//
 /////////////////////////////////
 
-let highScoreList = document.getElementById("highScoreList");
+let highScoreList = document.getElementById("ranking");
 
 function gethighScore() {
   let players = localStorage.getItem("players");
@@ -287,6 +287,6 @@ function gethighScore() {
       return `<div class="highScore">${score.userName} - ${score.score}</div>`;
     })
     .join("");
+    highScoreList.style.display = "flex";
 }
-
 gethighScore();

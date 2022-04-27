@@ -357,7 +357,7 @@ body {
 }
 
 .ranking {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-evenly;
   border: 8px #688ace;
@@ -368,6 +368,7 @@ body {
   border-style: outset;
   text-align: center;
   background: #5372af;
+
 }
 
 .scoreboard {
@@ -397,4 +398,7 @@ body {
   letter-spacing: 0.15em;
   font-size: 30px;
   color: #ffffff;
+}
+.highScore{
+  padding: 1em 0em;
 }
