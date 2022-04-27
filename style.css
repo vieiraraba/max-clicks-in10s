@@ -71,7 +71,6 @@ body {
   border-radius: 20px;
   background-position: center center;
   background-size: cover;
-  
 }
 
 .terminal-screen {
@@ -105,10 +104,9 @@ body {
   padding: 0.3rem;
   height: 300px;
   width: unset;
-  
 }
 .terminal {
-  display:block;
+  display: block;
   color: #ffffff;
   font-size: 13px;
   line-height: 20px;
@@ -123,7 +121,7 @@ body {
   height: 120px;
 }
 
-.start-btn{
+.start-btn {
   box-shadow: inset 0px 1px 0px 0px #ff994e;
   background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
   background-color: #d0451b;
@@ -144,27 +142,28 @@ body {
 
 /* Registration windows (User info) */
 
-.registration-screen{
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 20px;
-    width: auto;
-    padding: 4rem;
-    margin: 40px;
-    box-sizing: border-box;
-    height: 100%;
-    background-color: rgb(0 0 0);
-    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
-    background-size: contain;
-    font-family: Inconsolata, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: rgb(255 255 255 / 80%);
-    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
-    border-width: 2px;
-    border-style: inherit;
-    border-color: #47334f;
-    text-align: center;
+.registration-screen {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  width: auto;
+  padding: 4rem;
+  margin: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: rgb(0 0 0);
+  background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)),
+    url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+  background-size: contain;
+  font-family: Inconsolata, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(255 255 255 / 80%);
+  text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+  border-width: 2px;
+  border-style: inherit;
+  border-color: #47334f;
+  text-align: center;
 }
 
 #login-btn {
@@ -185,15 +184,14 @@ body {
   margin: 5px auto;
   font-family: "Press Start 2P", cursive;
 }
-.holder {
-}
+
 .row {
   display: grid;
 }
 .col col__left label {
   text-align: center;
 }
-#login  {
+#login {
   flex-grow: 1;
   color: #ffffff;
   font-size: 1.8rem;
@@ -233,6 +231,10 @@ body {
 
 #virus-image {
   height: 15vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: all 0.5s;
 }
 
 #virus-image:hover {
@@ -241,26 +243,27 @@ body {
 
 /* Win Window (if the player win) */
 
-.win-screen{
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 20px;
-    width: auto;
-    padding: 4rem;
-    margin: 40px;
-    box-sizing: border-box;
-    height: 100%;
-    background-color: rgb(0 0 0);
-    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
-    background-size: contain;
-    font-family: Inconsolata, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: rgb(255 255 255 / 80%);
-    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
-    border-width: 2px;
-    border-style: inherit;
-    border-color: #47334f;
+.win-screen {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  width: auto;
+  padding: 4rem;
+  margin: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: rgb(0 0 0);
+  background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)),
+    url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+  background-size: contain;
+  font-family: Inconsolata, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(255 255 255 / 80%);
+  text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+  border-width: 2px;
+  border-style: inherit;
+  border-color: #47334f;
 }
 
 /* Lose Window (if the player lose) */
@@ -291,18 +294,18 @@ body {
 /* ================================================================= */
 /* Footer */
 
-.footer{
-    display: flex;
-    border: 7px #313062;
-    border-radius: 20px;
-    background-color: #313062;
-    margin: 10px auto;
-    padding: 0.5rem;
-    width: 90%;
-    color: aliceblue;
-    border-style: ridge;
-    align-items: center;
-    justify-content: center;
+.footer {
+  display: flex;
+  border: 7px #313062;
+  border-radius: 20px;
+  background-color: #313062;
+  margin: 10px auto;
+  padding: 0.5rem;
+  width: 90%;
+  color: aliceblue;
+  border-style: ridge;
+  align-items: center;
+  justify-content: center;
 }
 
 .username {
@@ -319,7 +322,7 @@ body {
   background: #373357;
   color: azure;
 }
-.nickname{
+.nickname {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -348,62 +351,58 @@ body {
   background: #282745;
 }
 
-.live-score {}
-.live-data{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 6px #504c73;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 20px;
-    width: -webkit-fill-available;
-    border-style: groove;
-    background: #292548;
+.live-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 6px #504c73;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: -webkit-fill-available;
+  border-style: groove;
+  background: #292548;
 }
 
-.ranking{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 8px #688ace;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 20px;
-    width: 40%;
-    border-style: outset;
-    text-align: center;
-    background: #5372af;
+.ranking {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 8px #688ace;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: 40%;
+  border-style: outset;
+  text-align: center;
+  background: #5372af;
 }
 
 .scoreboard {
-    background-color: #313062;
-    border-radius: 10px;
-    border: 3px #688ace;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 24px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #854629;
-    font-variant: all-petite-caps;
-    font-family: inherit;
-    padding: 10px 0px 13px 0px;
-    width: 100%;
-    margin: auto;
-    TEXT-ALIGN: center;
-    border-style: inset;
+  background-color: #313062;
+  border-radius: 10px;
+  border: 3px #688ace;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+  font-variant: all-petite-caps;
+  font-family: inherit;
+  padding: 10px 0px 13px 0px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  border-style: inset;
 }
 
-.typing  {
+.typing {
   margin: auto;
 }
 
 .typing h1 {
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   font-size: 30px;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
-
-
