@@ -43,7 +43,7 @@ virusImg.addEventListener("click", counterClick);
 
 // TypeText
 let myText =
-    "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
+  "This is a message from Assembler School. The academy main server has been hacked.The virus is highly dangerous, its origin is unknown but it seems to be from deep Almeria. We need the help of all students. No teacher has been able to remove the virus from our system. Now it's your turn to show off your skills as a programmer.",
   i = 0;
 
 window.onload = function () {
@@ -154,6 +154,7 @@ function counterClick() {
     return counterClick;
   } else if (totalClicked === 20) {
     winGame();
+    goHome();
   } else {
     startTimer === true;
     totalClicked += 1;
@@ -259,3 +260,42 @@ function goHome() {
   //Reset score
   scoreEl.textContent = "0";
 }
+
+let highScoreList = document.getElementById('highScoreList');
+
+
+
+// function gethighScore() {
+//   let players = localStorage.getItem('players');
+//   let objectPlayers = JSON.parse(players);
+//   highScoreList.innerHTML = objectPlayers
+//   .map((score) => {
+//     return(`${score.userName} - ${score.score}`);
+//   })
+//   .join(" ");
+// }
+
+// gethighScore();
+
+
+
+function gethighScore() {
+  let players = localStorage.getItem('players');
+  let objectPlayers = JSON.parse(players);
+// map object
+  let scoremap = objectPlayers.map((score) => {
+    return(`${score.userName} - ${score.score}`)
+  }); 
+  console.log(scoremap);
+
+  highScoreList.innerHTML = scoremap.join(" ");
+  
+  //number sort
+  let scoreSort = scoremap.sort((a,b) => b.score - a.score );
+  console.log(scoreSort);
+  highScoreList.innerHTML = scoreSort;
+};
+
+
+gethighScore();
+
