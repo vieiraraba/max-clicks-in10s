@@ -23,21 +23,19 @@
         </header>
 
         <main class="main">
-            <audio autoplay>
-                <source src="/media/Music.mp3" type="audio/ogg">
-                <source src="/media/Music.mp3" type="audio/mpeg">
-            </audio>
+
             <section class="windows-desktop" id="windows-desktop">
                 <div class="terminal-screen" id="terminal-screen">
-                    <div class="terminal-header" id="terminal-header">
-                        <div class="btn-green"><span>🟢</span></div>
-                        <div class="btn-yellow"><span>🟡</span></div>
-                        <div class="btn-red"><span>🔴</span></div>
-                    </div>
+
                     <div class="terminal-content" id="terminal-content">
-                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo praesentium asperiores maxime amet dicta, id delectus illum, sit eveniet facere incidunt ducimus nam debitis odit! Maiores vitae repellendus reiciendis explicabo.</span>
-                    <button id="start-btn">start</button>
+                        <div class="typing">
+                            <h1>Important message</h1>
+                        </div>
+                        <div class="terminal">
+                        <p class="terminal-text" id="mytext"></p>
+                        </div>
                     </div>
+                    <button class="start-btn" id="start-btn">start</button>
                 </div>
             </section>
 <br>
@@ -96,7 +94,7 @@
                 <div class="lose-terminal">
                     <h2>Error <span class="errorcode">404</span></h2>
                     <p class="output">The virus wasn't defeated.</p>
-                    <p class="output">Please try to <a href="#1">try again</a> or <a href="#2">return to the homepage</a>.</p>
+                    <p class="output">Please try to <a href="#1" id="try-again">try again</a> or <a href="#2" id="home-page">return to the homepage</a>.</p>
                     <p class="output">Good luck.</p>
                 </div>
             </section>
