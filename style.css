@@ -221,6 +221,7 @@ body {
   border-radius: 20px;
   width: auto;
   height: 48vw;
+  padding: 1rem;
 }
 
 .timer {
@@ -233,6 +234,10 @@ body {
 
 #virus-image {
   height: 15vw;
+  position: absolute;
+  top:0px;
+  left:0px;
+  transition: all 0.5s;
 }
 
 #virus-image:hover {
