@@ -89,17 +89,15 @@ function updateScore() {
   localStorage.setItem("players", updateScore);
 }
 
-// function updateCurrentScore() {
-//   let getLocalStorageScore = JSON.parse(
-//     localStorage.getItem("players", playersObj)
-//   );
+// function updateLastScore() {
+//   let getLocalStorageScore = JSON.parse(localStorage.getItem("players"));
 //   let currentPlayer = getLocalStorageScore.splice(-1);
-//   currentPlayer[0].score = scoreEl.textContent;
+//   let test = currentPlayer.map((score) => (score.score = scoreEl.textContent));
+//   let updateLastPlayer = currentPlayer.score.push(test);
 
-//   let currentPlayerScore = getLocalStorageScore.push(currentPlayer);
-//   let updatePlayerScore = JSON.stringify(currentPlayerScore);
-//   localStorage.setItem("players", updatePlayerScore);
-// }
+// JSON.stringify(updateLastPlayer);
+// localStorage.setItem("players", updateLastPlayer);
+//}
 
 function addPlayerToStorage() {
   let getLocalStoragePlayer = JSON.parse(
@@ -152,9 +150,8 @@ function loseGame() {
 function counterClick() {
   if (finishTimer === true) {
     return counterClick;
-  } else if (totalClicked === 20) {
+  } else if (totalClicked === 5) {
     winGame();
-    goHome();
   } else {
     startTimer === true;
     totalClicked += 1;
@@ -163,12 +160,11 @@ function counterClick() {
   }
 }
 
-/* Timer */
+/* Timer counting beharviour*/
 function counterTime() {
   if (timeleft === -1) {
     loseGame();
     stopTimer();
-
     startTimer = false;
     finishTimer = true;
     console.log("test 1");
@@ -182,15 +178,14 @@ function counterTime() {
       console.log("test 2.2");
       console.log(homePageSelected); //true
       console.log(tryAgainSelected); //false
-      // } else if (homePageSelected && tryAgainSelected) {
-      //   updateCurrentScore();
-      //   stopTimer();
-      //   console.log("test 2.3");
-      //   console.log(homePageSelected); //true
-      //   console.log(tryAgainSelected); //false
+    } else if (homePageSelected && tryAgainSelected) {
+      updateLastScore();
+      stopTimer();
+      console.log("test 2.3");
+      console.log(homePageSelected); //true
+      console.log(tryAgainSelected); //false
     } else {
       storagePlayer();
-
       console.log("test 3");
     }
   } else {
@@ -235,8 +230,6 @@ function resetGame() {
   loseScreenEl.style.display = "none";
   //Reset score
   scoreEl.textContent = "0";
-  //Start time again
-  timeInterval = setInterval(counterTime, 1000);
 
   if (homePageSelected) {
     tryAgainSelected = true;
@@ -245,6 +238,9 @@ function resetGame() {
     tryAgainSelected = true;
     homePageSelected = false;
   }
+
+  //Start time again
+  timeInterval = setInterval(counterTime, 1000);
 }
 
 function goHome() {
