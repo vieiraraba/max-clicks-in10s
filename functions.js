@@ -168,6 +168,7 @@ function counterTime() {
   if (timeleft === -1) {
     loseGame();
     stopTimer();
+
     startTimer = false;
     finishTimer = true;
     console.log("test 1");
@@ -189,6 +190,7 @@ function counterTime() {
       //   console.log(tryAgainSelected); //false
     } else {
       storagePlayer();
+
       console.log("test 3");
     }
   } else {
@@ -250,6 +252,7 @@ function goHome() {
   tryAgainSelected = false;
   resetGlobalValues();
   stopTimer();
+  gethighScore();
   //Hidden screen and show game area
   terminalScreen.style.display = "flex";
   registrationScreen.style.display = "none";
@@ -262,7 +265,7 @@ function goHome() {
 }
 
 /////////////////////////////////
-//*** RESET GAME SECTION ***//
+//*** SCOREBOARD SECTION ***//
 /////////////////////////////////
 
 let highScoreList = document.getElementById("ranking");
@@ -287,6 +290,5 @@ function gethighScore() {
       return `<div class="highScore">${score.userName} - ${score.score}</div>`;
     })
     .join("");
-    highScoreList.style.display = "flex";
+  highScoreList.style.display = "flex";
 }
-gethighScore();
