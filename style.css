@@ -71,7 +71,6 @@ body {
   border-radius: 20px;
   background-position: center center;
   background-size: cover;
-  
 }
 
 .terminal-screen {
@@ -81,17 +80,6 @@ body {
   margin: 0px auto;
   padding: 40px;
 }
-
-/*.terminal-header {
-  display: flex;
-  justify-content: flex-start;
-  border: 1px solid #000;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #262545;
-  padding: 0.3rem;
-  width: auto;
-}*/
 
 .terminal-content {
   display: grid;
@@ -105,10 +93,9 @@ body {
   padding: 0.3rem;
   height: 300px;
   width: unset;
-  
 }
 .terminal {
-  display:block;
+  display: block;
   color: #ffffff;
   font-size: 13px;
   line-height: 20px;
@@ -123,7 +110,7 @@ body {
   height: 120px;
 }
 
-.start-btn{
+.start-btn {
   box-shadow: inset 0px 1px 0px 0px #ff994e;
   background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
   background-color: #d0451b;
@@ -144,26 +131,70 @@ body {
 
 /* Registration windows (User info) */
 
-.registration-screen{
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 20px;
-    width: auto;
-    padding: 4rem;
-    margin: 40px;
-    box-sizing: border-box;
-    height: 100%;
-    background-color: rgb(0 0 0);
-    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
-    background-size: contain;
-    font-family: Inconsolata, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: rgb(255 255 255 / 80%);
-    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
-    border-width: 2px;
-    border-style: inherit;
-    border-color: #47334f;
+.registration-screen {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  width: auto;
+  padding: 4rem;
+  margin: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: rgb(0 0 0);
+  background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)),
+    url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+  background-size: contain;
+  font-family: Inconsolata, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(255 255 255 / 80%);
+  text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+  border-width: 2px;
+  border-style: inherit;
+  border-color: #47334f;
+  text-align: center;
+}
+
+#login-btn {
+  box-shadow: inset 0px 1px 0px 0px #ff994e;
+  background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
+  background-color: #d0451b;
+  border-radius: 6px;
+  border: 1px solid #942911;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 19px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+  font-variant: all-petite-caps;
+  padding: 10px 0px 13px 0px;
+  width: 30%;
+  margin: 5px auto;
+  font-family: "Press Start 2P", cursive;
+}
+
+.row {
+  display: grid;
+}
+.col col__left label {
+  text-align: center;
+}
+#login {
+  flex-grow: 1;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  background: black;
+  border-color: #fe9349;
+  border-width: 4px;
+  border-style: groove;
+  border-radius: 7px;
+  padding-left: 10px;
+  margin: 10px;
+  font-family: "Press Start 2P";
+  text-align: center;
 }
 
 /* Game window (playable area) */
@@ -177,7 +208,6 @@ body {
   border-radius: 20px;
   width: auto;
   height: 48vw;
-  padding: 1rem;
 }
 
 .timer {
@@ -191,8 +221,8 @@ body {
 #virus-image {
   height: 15vw;
   position: absolute;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
   transition: all 0.5s;
 }
 
@@ -202,26 +232,27 @@ body {
 
 /* Win Window (if the player win) */
 
-.win-screen{
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 20px;
-    width: auto;
-    padding: 4rem;
-    margin: 40px;
-    box-sizing: border-box;
-    height: 100%;
-    background-color: rgb(0 0 0);
-    background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)), url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
-    background-size: contain;
-    font-family: Inconsolata, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: rgb(255 255 255 / 80%);
-    text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
-    border-width: 2px;
-    border-style: inherit;
-    border-color: #47334f;
+.win-screen {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  width: auto;
+  padding: 4rem;
+  margin: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: rgb(0 0 0);
+  background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)),
+    url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
+  background-size: contain;
+  font-family: Inconsolata, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(255 255 255 / 80%);
+  text-shadow: rgb(51 206 255) 0px 0px 1ex, rgb(255 255 255 / 80%) 0px 0px 2px;
+  border-width: 2px;
+  border-style: inherit;
+  border-color: #47334f;
 }
 
 /* Lose Window (if the player lose) */
@@ -252,69 +283,121 @@ body {
 /* ================================================================= */
 /* Footer */
 
-.footer{
-    display: flex;
-    border: 7px #313062;
-    border-radius: 20px;
-    background-color: #313062;
-    margin: 10px auto;
-    padding: 0.5rem;
-    width: 90%;
-    color: aliceblue;
-    border-style: ridge;
-    align-items: center;
-    justify-content: center;
+.footer {
+  display: flex;
+  border: 7px #313062;
+  border-radius: 20px;
+  background-color: #313062;
+  margin: 10px auto;
+  padding: 0.5rem;
+  width: 90%;
+  color: aliceblue;
+  border-style: ridge;
+  align-items: center;
+  justify-content: center;
 }
 
-.live-data{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 3px #688ace;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 20px;
-    width: -webkit-fill-available;
-    border-style: dashed;
+.username {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 5px #5b5872;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 15px 20px;
+  width: -webkit-fill-available;
+  border-style: inset;
+  text-align: center;
+  background: #373357;
+  color: azure;
+}
+.nickname {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 4px #403f57;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  border-style: inset;
+  text-align: center;
+  background: #181827;
 }
 
-.ranking{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 3px #688ace;
-    border-radius: 20px;
-    margin: 20px;
-    padding: 20px;
-    width: -webkit-fill-available;
-    border-style: dashed;
+.live-score {
+  text-align: center;
+}
+.score {
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 4px #4d4b91;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  border-style: inset;
+  text-align: center;
+  background: #282745;
+}
+
+.live-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 6px #504c73;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: -webkit-fill-available;
+  border-style: groove;
+  background: #292548;
+}
+
+.ranking {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 8px #688ace;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: 40%;
+  border-style: outset;
+  text-align: center;
+  background: #5372af;
 }
 
 .scoreboard {
-    box-shadow: 0px 10px 14px -7px #000000;
-    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-    background-color: #599bb3;
-    border-radius: 8px;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 13px 32px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #0e0e0e;
+  background-color: #313062;
+  border-radius: 10px;
+  border: 3px #688ace;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+  font-variant: all-petite-caps;
+  font-family: inherit;
+  padding: 10px 0px 13px 0px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  border-style: inset;
 }
 
-.typing  {
+.typing {
   margin: auto;
 }
 
 .typing h1 {
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   font-size: 30px;
-  color: #FFFFFF;
-
+  color: #ffffff;
 }
-
-
+.highScore {
+  padding: 1em 0em;
+}
