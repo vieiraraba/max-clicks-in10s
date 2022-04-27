@@ -52,17 +52,16 @@
                                     <br>
                                     <div class="row">
                                     <div class="col col__left label">
-                                        Nickname:
+                                    Enter your Nickname:
                                     </div>
                                     <div class="col col__center">
-                                        <input type="text" id="login" maxlength="32">
+                                        <input type="text" id="login" minlength="3" maxlength="10">
                                     </div>
                                     </div>
                                     <!-- <b class="flash">ACCESS DENIED</b> -->
                                     <div class="row">
                                         <button type="submit" id="login-btn" name="submit">[login]</button>
                                     </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +94,7 @@
                 <div class="lose-terminal">
                     <h2>Error <span class="errorcode">404</span></h2>
                     <p class="output">The virus wasn't defeated.</p>
-                    <p class="output">Please try to <a href="#1">try again</a> or <a href="#2">return to the homepage</a>.</p>
+                    <p class="output">Please try to <a href="#1" id="try-again">try again</a> or <a href="#2" id="home-page">return to the homepage</a>.</p>
                     <p class="output">Good luck.</p>
                 </div>
             </section>
@@ -106,8 +105,7 @@
             <section class="live-data" id="live-data"><br>
                 <div class="username">
                     <h4>User Name</h4><br>
-                    <div class="nickname">
-                        <span>Benito</span>
+                    <div class="nickname" id="user-name">
                     </div>
                 </div>
                 <br><br>

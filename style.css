@@ -125,8 +125,8 @@ body {
 
 .start-btn{
   box-shadow: inset 0px 1px 0px 0px #ff994e;
-  background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
-  background-color: #d0451b;
+  /* background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%); */
+  background-color: #1bd027;
   border-radius: 6px;
   border: 1px solid #942911;
   display: inline-block;
@@ -164,6 +164,50 @@ body {
     border-width: 2px;
     border-style: inherit;
     border-color: #47334f;
+    text-align: center;
+}
+
+#login-btn {
+  box-shadow: inset 0px 1px 0px 0px #ff994e;
+  background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
+  background-color: #d0451b;
+  border-radius: 6px;
+  border: 1px solid #942911;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 19px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #854629;
+  font-variant: all-petite-caps;
+  padding: 10px 0px 13px 0px;
+  width: 30%;
+  margin: 5px auto;
+  font-family: "Press Start 2P", cursive;
+}
+.holder {
+}
+.row {
+  display: grid;
+}
+.col col__left label {
+  text-align: center;
+}
+#login  {
+  flex-grow: 1;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  background: black;
+  border-color: #fe9349;
+  border-width: 4px;
+  border-style: groove;
+  border-radius: 7px;
+  padding-left: 10px;
+  margin: 10px;
+  font-family: "Press Start 2P";
+  text-align: center;
 }
 
 /* Game window (playable area) */
@@ -177,6 +221,7 @@ body {
   border-radius: 20px;
   width: auto;
   height: 48vw;
+  padding: 1rem;
 }
 
 .timer {
@@ -189,6 +234,10 @@ body {
 
 #virus-image {
   height: 15vw;
+  position: absolute;
+  top:0px;
+  left:0px;
+  transition: all 0.5s;
 }
 
 #virus-image:hover {
@@ -261,44 +310,94 @@ body {
     justify-content: center;
 }
 
+.username {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 5px #5b5872;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 15px 20px;
+  width: -webkit-fill-available;
+  border-style: inset;
+  text-align: center;
+  background: #373357;
+  color: azure;
+}
+.nickname{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 4px #403f57;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  border-style: inset;
+  text-align: center;
+  background: #181827;
+}
+
+.score {
+  color: azure;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 4px #4d4b91;
+  border-radius: 10px;
+  margin: 0px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  border-style: inset;
+  text-align: center;
+  background: #282745;
+}
+
+.live-score {}
 .live-data{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border: 3px #688ace;
+    border: 6px #504c73;
     border-radius: 20px;
     margin: 20px;
     padding: 20px;
     width: -webkit-fill-available;
-    border-style: dashed;
+    border-style: groove;
+    background: #292548;
 }
 
 .ranking{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border: 3px #688ace;
+    border: 8px #688ace;
     border-radius: 20px;
     margin: 20px;
     padding: 20px;
-    width: -webkit-fill-available;
-    border-style: dashed;
+    width: 40%;
+    border-style: outset;
+    text-align: center;
+    background: #5372af;
 }
 
 .scoreboard {
-    box-shadow: 0px 10px 14px -7px #000000;
-    background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-    background-color: #599bb3;
-    border-radius: 8px;
+    background-color: #313062;
+    border-radius: 10px;
+    border: 3px #688ace;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 13px 32px;
+    font-size: 24px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #0e0e0e;
+    text-shadow: 0px 1px 0px #854629;
+    font-variant: all-petite-caps;
+    font-family: inherit;
+    padding: 10px 0px 13px 0px;
+    width: 100%;
+    margin: auto;
+    TEXT-ALIGN: center;
+    border-style: inset;
 }
 
 .typing  {
