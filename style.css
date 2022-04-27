@@ -81,17 +81,6 @@ body {
   padding: 40px;
 }
 
-/*.terminal-header {
-  display: flex;
-  justify-content: flex-start;
-  border: 1px solid #000;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #262545;
-  padding: 0.3rem;
-  width: auto;
-}*/
-
 .terminal-content {
   display: grid;
   justify-content: flex-start;
@@ -336,6 +325,9 @@ body {
   background: #181827;
 }
 
+.live-score{
+  text-align: center;
+}
 .score {
   color: azure;
   display: flex;
