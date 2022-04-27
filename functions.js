@@ -80,22 +80,38 @@ function storagePlayer() {
   localStorage.setItem("players", JSON.stringify(playersObj));
 }
 
-function updateScore() {
+// function updateScore() {
+//   let getLocalStorageScore = JSON.parse(
+//     localStorage.getItem("players", playersObj)
+//   );
+//   getLocalStorageScore[0].score = scoreEl.textContent;
+//   let updateScore = JSON.stringify(getLocalStorageScore);
+//   localStorage.setItem("players", updateScore);
+// }
+
+function updateCurrentScore() {
   let getLocalStorageScore = JSON.parse(
     localStorage.getItem("players", playersObj)
   );
-  getLocalStorageScore[0].score = scoreEl.textContent;
-  let updateScore = JSON.stringify(getLocalStorageScore);
-  localStorage.setItem("players", updateScore);
+  let currentPlayer = getLocalStorageScore.splice(-1);
+  currentPlayer[0].score = scoreEl.textContent;
+
+  let currentPlayerScore = getLocalStorageScore.push(currentPlayer);
+  let updatePlayerScore = JSON.stringify(currentPlayerScore);
+  localStorage.setItem("players", updatePlayerScore);
 }
 
-function updateName() {
-  let getLocalStorageName = JSON.parse(
+function addPlayerToStorage() {
+  let getLocalStoragePlayer = JSON.parse(
     localStorage.getItem("players", playersObj)
   );
-  let getCurrentPlayer = getLocalStorageName[0].userName;
-  let updateName = JSON.stringify(getCurrentPlayer);
-  localStorage.setItem("players", updateName);
+
+  let addUser = nickName.value;
+  let addScore = scoreEl.textContent;
+  let addPlayer = new Player(addUser, addScore);
+  getLocalStoragePlayer.push(addPlayer);
+  let updatePlayer = JSON.stringify(getLocalStoragePlayer);
+  localStorage.setItem("players", updatePlayer);
 }
 
 /////////////////////////////////
@@ -154,13 +170,22 @@ function counterTime() {
     startTimer = false;
     finishTimer = true;
     console.log("test 1");
-    if (tryAgainSelected || homePageSelected) {
-      // resetGame();
-      updateScore(); //TODO --> Insert only new score insted of add new object
-      updateName();
+    if (tryAgainSelected && !homePageSelected) {
+      updateScore();
       stopTimer();
-      console.log("test 2");
-      console.log(finishTimer);
+      console.log("test 2.1");
+    } else if (homePageSelected && !tryAgainSelected) {
+      addPlayerToStorage();
+      stopTimer();
+      console.log("test 2.2");
+      console.log(homePageSelected); //true
+      console.log(tryAgainSelected); //false
+      // } else if (homePageSelected && tryAgainSelected) {
+      //   updateCurrentScore();
+      //   stopTimer();
+      //   console.log("test 2.3");
+      //   console.log(homePageSelected); //true
+      //   console.log(tryAgainSelected); //false
     } else {
       storagePlayer();
       console.log("test 3");
@@ -199,7 +224,6 @@ function resetGlobalValues() {
 }
 
 function resetGame() {
-  tryAgainSelected = true;
   resetGlobalValues();
   //Show only Game area
   terminalScreen.style.display = "none";
@@ -210,10 +234,19 @@ function resetGame() {
   scoreEl.textContent = "0";
   //Start time again
   timeInterval = setInterval(counterTime, 1000);
+
+  if (homePageSelected) {
+    tryAgainSelected = true;
+    homePageSelected = true;
+  } else {
+    tryAgainSelected = true;
+    homePageSelected = false;
+  }
 }
 
 function goHome() {
   homePageSelected = true;
+  tryAgainSelected = false;
   resetGlobalValues();
   stopTimer();
   //Hidden screen and show game area
