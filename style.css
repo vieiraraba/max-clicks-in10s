@@ -358,7 +358,7 @@ body {
 }
 
 .ranking {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 40%;
@@ -375,7 +375,8 @@ body {
   background-color: #313062;
   border-radius: 10px;
   border: 3px #688ace;
-  display: inline-block;
+  display: flex;
+  justify-content:center;
   cursor: pointer;
   color: #ffffff;
   font-size: 24px;
