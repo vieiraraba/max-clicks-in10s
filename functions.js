@@ -233,7 +233,7 @@ function goHome() {
 //*** SCOREBOARD SECTION ***//
 /////////////////////////////////
 
-let highScoreList = document.getElementById("highScoreList");
+let highScoreList = document.getElementById("ranking");
 let scoreBoard = document.getElementById("score-board")
 
 function gethighScore() {
@@ -251,5 +251,5 @@ function gethighScore() {
     })
     .join("");
   highScoreList.style.display = "flex";
-  scoreboard.style.display = "flex";
+  scoreBoard.style.display = "flex";
 }

@@ -358,7 +358,7 @@ body {
 }
 
 .ranking {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-evenly;
   width: 40%;
