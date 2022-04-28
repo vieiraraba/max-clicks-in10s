@@ -250,4 +250,5 @@ function gethighScore() {
     })
     .join("");
   highScoreList.style.display = "flex";
+  scoreboard.style.display = "flex";
 }
