@@ -73,7 +73,6 @@ let playersObj = [];
 
 function storagePlayer() {
   let user = nickName.value;
-  console.log(user);
   let score = scoreEl.textContent;
   let players = new Player(user, score);
   playersObj.push(players);
@@ -88,18 +87,6 @@ function updateScore() {
   let updateScore = JSON.stringify(getLocalStorageScore);
   localStorage.setItem("players", updateScore);
 }
-
-// function updateCurrentScore() {
-//   let getLocalStorageScore = JSON.parse(
-//     localStorage.getItem("players", playersObj)
-//   );
-//   let currentPlayer = getLocalStorageScore.splice(-1);
-//   currentPlayer[0].score = scoreEl.textContent;
-
-//   let currentPlayerScore = getLocalStorageScore.push(currentPlayer);
-//   let updatePlayerScore = JSON.stringify(currentPlayerScore);
-//   localStorage.setItem("players", updatePlayerScore);
-// }
 
 function addPlayerToStorage() {
   let getLocalStoragePlayer = JSON.parse(
@@ -130,7 +117,6 @@ function startGame() {
   gameArea.style.display = "flex";
   timeInterval = setInterval(counterTime, 1000);
   userName.textContent = userData;
-  console.log(userData);
 }
 
 function winGame() {
@@ -159,39 +145,24 @@ function counterClick() {
     startTimer === true;
     totalClicked += 1;
     scoreEl.textContent = totalClicked;
-    console.log(totalClicked);
   }
 }
 
-/* Timer */
+/* Timer counter behaviour */
 function counterTime() {
   if (timeleft === -1) {
     loseGame();
     stopTimer();
-
     startTimer = false;
     finishTimer = true;
-    console.log("test 1");
     if (tryAgainSelected && !homePageSelected) {
       updateScore();
       stopTimer();
-      console.log("test 2.1");
     } else if (homePageSelected && !tryAgainSelected) {
       addPlayerToStorage();
       stopTimer();
-      console.log("test 2.2");
-      console.log(homePageSelected); //true
-      console.log(tryAgainSelected); //false
-      // } else if (homePageSelected && tryAgainSelected) {
-      //   updateCurrentScore();
-      //   stopTimer();
-      //   console.log("test 2.3");
-      //   console.log(homePageSelected); //true
-      //   console.log(tryAgainSelected); //false
     } else {
       storagePlayer();
-
-      console.log("test 3");
     }
   } else {
     timerEl.textContent = timeleft;
@@ -200,7 +171,7 @@ function counterTime() {
   }
 }
 
-/* Virus effect */
+/* Virus effect in the game area*/
 let object = document.getElementById("virus-image");
 object.onclick = function () {
   let x = Math.floor(Math.random() * 300);
@@ -237,14 +208,8 @@ function resetGame() {
   scoreEl.textContent = "0";
   //Start time again
   timeInterval = setInterval(counterTime, 1000);
-
-  if (homePageSelected) {
-    tryAgainSelected = true;
-    homePageSelected = true;
-  } else {
-    tryAgainSelected = true;
-    homePageSelected = false;
-  }
+  tryAgainSelected = true;
+  homePageSelected = false;
 }
 
 function goHome() {
@@ -273,12 +238,6 @@ let highScoreList = document.getElementById("ranking");
 function gethighScore() {
   let players = localStorage.getItem("players");
   let objectPlayers = JSON.parse(players);
-  console.log(objectPlayers);
-
-  let scoremap = objectPlayers.map((score) => {
-    return `${score.userName} - ${score.score}`;
-  });
-  console.log(scoremap);
 
   //number sort
   let scoreSort = objectPlayers.sort((a, b) => b.score - a.score);
