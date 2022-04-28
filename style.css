@@ -53,10 +53,10 @@ body {
   background-image: url(/media/1j6F_morado.gif);
   background-position: center;
   background-size: auto;
-  border-radius: 20px;
-  width: 90%;
-  margin: auto;
   background-repeat: round;
+  width: 90%;
+  border-radius: 20px;
+  margin: auto;
   border: solid 11px #313062;
   border-style: double;
 }
@@ -87,15 +87,16 @@ body {
   border: 1px solid #000;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  /* background-color: #262545; */
-
   margin: 0.02rem;
   padding: 0.3rem;
   height: 300px;
   width: unset;
 }
+
 .terminal {
   display: block;
+  width: 850px;
+  height: 120px;
   color: #ffffff;
   font-size: 13px;
   line-height: 20px;
@@ -106,11 +107,12 @@ body {
   border: 3px;
   border-style: solid;
   border-color: #52aafe;
-  width: 850px;
-  height: 120px;
+
 }
 
 .start-btn {
+  width: 50%;
+  margin: auto;
   box-shadow: inset 0px 1px 0px 0px #ff994e;
   background: linear-gradient(to bottom, #fe8140 5%, #bd2204 100%);
   background-color: #d0451b;
@@ -125,8 +127,6 @@ body {
   font-variant: all-petite-caps;
   font-family: inherit;
   padding: 10px 0px 13px 0px;
-  width: 50%;
-  margin: auto;
 }
 
 /* Registration windows (User info) */
@@ -137,10 +137,10 @@ body {
   flex-direction: column;
   border-radius: 20px;
   width: auto;
+  height: 100%;
   padding: 4rem;
   margin: 40px;
   box-sizing: border-box;
-  height: 100%;
   background-color: rgb(0 0 0);
   background-image: radial-gradient(rgb(18 27 40 / 91%), rgb(2, 9, 3)),
     url(https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif);
@@ -202,12 +202,13 @@ body {
 .game-area {
   display: none;
   position: relative;
+  width: auto;
+  height: 48vw;
   justify-content: center;
   flex-direction: column;
   border: 1px solid #000;
   border-radius: 20px;
-  width: auto;
-  height: 48vw;
+
 }
 
 .timer {
@@ -360,11 +361,11 @@ body {
   display: none;
   flex-direction: column;
   justify-content: space-evenly;
+  width: 40%;
   border: 8px #688ace;
   border-radius: 20px;
   margin: 20px;
   padding: 20px;
-  width: 40%;
   border-style: outset;
   text-align: center;
   background: #5372af;
