@@ -8,7 +8,7 @@ const winScreen = document.getElementById("win-screen");
 const loseScreen = document.getElementById("lost-screen");
 const startBtn = document.getElementById("start-btn");
 const loginBtn = document.getElementById("login-btn");
-const tryAgain = document.getElementById("try-again");
+const tryAgainBtn = document.getElementById("try-again");
 const homePage = document.getElementById("home-page");
 let nickName = document.getElementById("login");
 let timer = document.getElementById("timer-number");
@@ -27,17 +27,14 @@ let gameShow = false;
 let timeleft = 10;
 let totalClicked = 0;
 let startTimer = false;
-let finishTimer = false;
 let timeInterval;
 let userData;
-let tryAgainSelected;
-let homePageSelected;
 
 // EventListeners //
 
 startBtn.addEventListener("click", registration);
 loginBtn.addEventListener("click", startGame);
-tryAgain.addEventListener("click", resetGame);
+tryAgainBtn.addEventListener("click", tryAgain);
 homePage.addEventListener("click", goHome);
 virusImg.addEventListener("click", counterClick);
 
@@ -63,53 +60,22 @@ window.onload = function () {
 
 //--- Object Constructor --- //
 class Player {
-  constructor(userName, score) {
+  constructor(userName, userScore) {
     this.userName = userName;
-    this.score = score;
+    this.userScore = userScore;
   }
 }
 
 let playersObj = [];
 
 function storagePlayer() {
-  let user = nickName.value;
-  console.log(user);
-  let score = scoreEl.textContent;
-  let players = new Player(user, score);
-  playersObj.push(players);
-  localStorage.setItem("players", JSON.stringify(playersObj));
-}
-
-function updateScore() {
-  let getLocalStorageScore = JSON.parse(
-    localStorage.getItem("players", playersObj)
-  );
-  getLocalStorageScore[0].score = scoreEl.textContent;
-  let updateScore = JSON.stringify(getLocalStorageScore);
-  localStorage.setItem("players", updateScore);
-}
-
-// function updateLastScore() {
-//   let getLocalStorageScore = JSON.parse(localStorage.getItem("players"));
-//   let currentPlayer = getLocalStorageScore.splice(-1);
-//   let test = currentPlayer.map((score) => (score.score = scoreEl.textContent));
-//   let updateLastPlayer = currentPlayer.score.push(test);
-
-// JSON.stringify(updateLastPlayer);
-// localStorage.setItem("players", updateLastPlayer);
-//}
-
-function addPlayerToStorage() {
-  let getLocalStoragePlayer = JSON.parse(
-    localStorage.getItem("players", playersObj)
-  );
-
-  let addUser = nickName.value;
-  let addScore = scoreEl.textContent;
-  let addPlayer = new Player(addUser, addScore);
-  getLocalStoragePlayer.push(addPlayer);
-  let updatePlayer = JSON.stringify(getLocalStoragePlayer);
-  localStorage.setItem("players", updatePlayer);
+  for (i = 1; i < Player.length; i++) {
+    let user = nickName.value;
+    let score = scoreEl.textContent;
+    let players = new Player(user, score);
+    playersObj.push(players);
+    localStorage.setItem("players", JSON.stringify(playersObj));
+  }
 }
 
 /////////////////////////////////
@@ -128,7 +94,6 @@ function startGame() {
   gameArea.style.display = "flex";
   timeInterval = setInterval(counterTime, 1000);
   userName.textContent = userData;
-  console.log(userData);
 }
 
 function winGame() {
@@ -148,10 +113,9 @@ function loseGame() {
 /////////////////////////////////
 /* click interaction*/
 function counterClick() {
-  if (finishTimer === true) {
-    return counterClick;
-  } else if (totalClicked === 5) {
+  if (totalClicked === 5) {
     winGame();
+    console.log(totalClicked);
   } else {
     startTimer === true;
     totalClicked += 1;
@@ -160,34 +124,12 @@ function counterClick() {
   }
 }
 
-/* Timer counting beharviour*/
+/* Timer counting */
 function counterTime() {
   if (timeleft === -1) {
     loseGame();
     stopTimer();
     startTimer = false;
-    finishTimer = true;
-    console.log("test 1");
-    if (tryAgainSelected && !homePageSelected) {
-      updateScore();
-      stopTimer();
-      console.log("test 2.1");
-    } else if (homePageSelected && !tryAgainSelected) {
-      addPlayerToStorage();
-      stopTimer();
-      console.log("test 2.2");
-      console.log(homePageSelected); //true
-      console.log(tryAgainSelected); //false
-    } else if (homePageSelected && tryAgainSelected) {
-      updateLastScore();
-      stopTimer();
-      console.log("test 2.3");
-      console.log(homePageSelected); //true
-      console.log(tryAgainSelected); //false
-    } else {
-      storagePlayer();
-      console.log("test 3");
-    }
   } else {
     timerEl.textContent = timeleft;
     timeleft -= 1;
@@ -205,8 +147,32 @@ object.onclick = function () {
 };
 
 /////////////////////////////////
+//*** DISPLAY SCOREBOARD SECTION ***//
+/////////////////////////////////
+
+let highScoreList = document.getElementById("ranking");
+
+function gethighScore() {
+  let userPlayers = JSON.parse(localStorage.getItem("players"));
+
+  //number sort
+  let scoreSort = userPlayers.sort((a, b) => b.userScore - a.userScore);
+
+  let highScore = JSON.stringify(scoreSort);
+  localStorage.setItem("players", highScore);
+
+  highScoreList.innerHTML = scoreSort
+    .map((score) => {
+      return `<div class="highScore">${score.userName} - ${score.userScore}</div>`;
+    })
+    .join("");
+  highScoreList.style.display = "flex";
+}
+
+/////////////////////////////////
 //*** RESET GAME SECTION ***//
 /////////////////////////////////
+
 function stopTimer() {
   clearTimeout(timeInterval);
   timerEl.textContent = "";
@@ -217,74 +183,36 @@ function resetGlobalValues() {
   timeleft = 10;
   startTimer = false;
   terminalShow = false;
-  finishTimer = false;
   gameShow = false;
 }
 
-function resetGame() {
+function tryAgain() {
   resetGlobalValues();
-  //Show only Game area
+  stopTimer();
+  //Display game area
+  gameArea.style.display = "flex";
   terminalScreen.style.display = "none";
   registrationScreen.style.display = "none";
-  gameArea.style.display = "flex";
   loseScreenEl.style.display = "none";
-  //Reset score
+  //Reset score in the game screen area
   scoreEl.textContent = "0";
-
-  if (homePageSelected) {
-    tryAgainSelected = true;
-    homePageSelected = true;
-  } else {
-    tryAgainSelected = true;
-    homePageSelected = false;
-  }
-
-  //Start time again
+  //Start game timer
   timeInterval = setInterval(counterTime, 1000);
 }
 
 function goHome() {
-  homePageSelected = true;
-  tryAgainSelected = false;
   resetGlobalValues();
+  storagePlayer();
   stopTimer();
   gethighScore();
-  //Hidden screen and show game area
+
+  //Display home page
   terminalScreen.style.display = "flex";
   registrationScreen.style.display = "none";
   gameArea.style.display = "none";
   loseScreenEl.style.display = "none";
-  //Reset user name
+
+  // Reset user name and score in the home page
   userName.textContent = "";
-  //Reset score
   scoreEl.textContent = "0";
-}
-
-/////////////////////////////////
-//*** SCOREBOARD SECTION ***//
-/////////////////////////////////
-
-let highScoreList = document.getElementById("ranking");
-
-function gethighScore() {
-  let players = localStorage.getItem("players");
-  let objectPlayers = JSON.parse(players);
-  console.log(objectPlayers);
-
-  let scoremap = objectPlayers.map((score) => {
-    return `${score.userName} - ${score.score}`;
-  });
-  console.log(scoremap);
-
-  //number sort
-  let scoreSort = objectPlayers.sort((a, b) => b.score - a.score);
-  let finalSortScore = JSON.stringify(scoreSort);
-  localStorage.setItem("players", finalSortScore);
-
-  highScoreList.innerHTML = scoreSort
-    .map((score) => {
-      return `<div class="highScore">${score.userName} - ${score.score}</div>`;
-    })
-    .join("");
-  highScoreList.style.display = "flex";
 }

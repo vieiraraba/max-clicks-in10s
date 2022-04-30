@@ -325,7 +325,7 @@ body {
   background: #181827;
 }
 
-.live-score{
+.live-score {
   text-align: center;
 }
 .score {
@@ -368,7 +368,6 @@ body {
   border-style: outset;
   text-align: center;
   background: #5372af;
-
 }
 
 .scoreboard {
@@ -399,6 +398,6 @@ body {
   font-size: 30px;
   color: #ffffff;
 }
-.highScore{
+.highScore {
   padding: 1em 0em;
 }
