@@ -4,8 +4,9 @@
 const terminalScreen = document.getElementById("terminal-screen");
 const registrationScreen = document.getElementById("registration-screen");
 const gameArea = document.getElementById("game-area");
-const winScreen = document.getElementById("win-screen");
-const loseScreen = document.getElementById("lost-screen");
+const loseScreenEl = document.querySelector(".lose-screen ");
+const winScreenEl = document.getElementById("win-screen");
+
 const startBtn = document.getElementById("start-btn");
 const loginBtn = document.getElementById("login-btn");
 const tryAgainBtn = document.getElementById("try-again");
@@ -13,13 +14,12 @@ const homePage = document.getElementById("home-page");
 let nickName = document.getElementById("login");
 let timer = document.getElementById("timer-number");
 let userName = document.getElementById("user-name");
-
 let virusImg = document.getElementById("virus-image");
 let scoreEl = document.querySelector(".score");
 let timerEl = document.getElementById("timer");
 let gameAreaEl = document.querySelector(".game-area");
-let winScreenEl = document.querySelector(".win-screen ");
-let loseScreenEl = document.querySelector(".lose-screen ");
+
+let highScoreList = document.getElementById("ranking");
 
 //Global Variables
 let terminalShow = false;
@@ -99,8 +99,6 @@ function startGame() {
 function winGame() {
   winScreenEl.style.display = "flex";
   gameAreaEl.style.display = "none";
-  clearTimeout(timeInterval);
-  return counterClick;
 }
 
 function loseGame() {
@@ -113,14 +111,11 @@ function loseGame() {
 /////////////////////////////////
 /* click interaction*/
 function counterClick() {
-  if (totalClicked === 5) {
+  totalClicked += 1;
+  scoreEl.textContent = totalClicked;
+  if (totalClicked === 15) {
     winGame();
-    console.log(totalClicked);
-  } else {
-    startTimer === true;
-    totalClicked += 1;
-    scoreEl.textContent = totalClicked;
-    console.log(totalClicked);
+    stopTimer();
   }
 }
 
@@ -129,7 +124,6 @@ function counterTime() {
   if (timeleft === -1) {
     loseGame();
     stopTimer();
-    startTimer = false;
   } else {
     timerEl.textContent = timeleft;
     timeleft -= 1;
@@ -138,19 +132,16 @@ function counterTime() {
 }
 
 /* Virus effect */
-let object = document.getElementById("virus-image");
-object.onclick = function () {
-  let x = Math.floor(Math.random() * 300);
-  let y = Math.floor(Math.random() * 700);
-  object.style.top = x + "px";
-  object.style.left = y + "px";
+virusImg.onclick = function () {
+  virusImg.style.top = Math.floor(Math.random() * 100 + 1) + "%";
+  console.log(virusImg.style.top);
+  virusImg.style.left = Math.floor(Math.random() * 100 + 1) + "%";
+  console.log(virusImg.style.left);
 };
 
 /////////////////////////////////
 //*** DISPLAY SCOREBOARD SECTION ***//
 /////////////////////////////////
-
-let highScoreList = document.getElementById("ranking");
 
 function gethighScore() {
   let userPlayers = JSON.parse(localStorage.getItem("players"));
@@ -176,6 +167,7 @@ function gethighScore() {
 function stopTimer() {
   clearTimeout(timeInterval);
   timerEl.textContent = "";
+  startTimer === false;
 }
 
 function resetGlobalValues() {
